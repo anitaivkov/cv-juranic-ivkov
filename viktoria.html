@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Viktoria Juranić – portfolio, studentica FERIT Osijek">
+    <title>Viktoria Juranić – Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%233D315B'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Arial Black,Arial,sans-serif' font-weight='900' font-size='13' fill='%23F8F991'%3ECV%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="cv-body">
+
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-brand">CV<span>Viktoria&amp;Anita</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" >Početna</a></li>
+      <li><a href="viktoria.html" class="active">Viktoria</a></li>
+      <li><a href="anita.html" >Anita</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" role="dialog" aria-label="Uvećana slika" aria-modal="true">
+    <button id="lightbox-close" title="Zatvori (Esc)">×</button>
+    <button id="lightbox-prev" title="Prethodna slika (←)">&#8249;</button>
+    <button id="lightbox-next" title="Sljedeća slika (→)">&#8250;</button>
+    <img id="lightbox-img" src="" alt="">
+    <div id="lightbox-counter"></div>
+</div>
+
+
+<div class="cv-page">
+    <div class="container">
+
+        <!-- HERO KARTICA -->
+        <div class="cv-hero-card">
+
+            <!-- Slika -->
+            <div class="cv-hero-img-col">
+                <div class="cv-img-placeholder" aria-label="Profilna fotografija">
+                    moja<br>slika
+                </div>
+            </div>
+
+            <!-- Naslov i studij -->
+            <div class="cv-hero-mid-col">
+                <h1 class="cv-hero-title">STUDENTICA<br>RAČUNARSTVA</h1>
+                <p class="cv-hero-school"><a href="https://www.ferit.unios.hr/" target="_blank" rel="noopener" style="color:inherit;">FERIT Osijek</a></p>
+                <p class="cv-hero-program">3.godina stručnog studija računarstva</p>
+            </div>
+
+            <!-- Osnovni podaci + kontakt -->
+            <div class="cv-hero-right-col">
+                <div class="cv-infobox">
+                    <span class="cv-infobox-label" style="display:flex;align-items:center;gap:.4rem;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Osnovni podaci</span>
+                    <p class="cv-infobox-text">
+                        Datum rođenja: 19.10.2004.<br>
+                        Mjesto stanovanja: Osijek
+                    </p>
+                </div>
+                <div class="cv-contact-row">
+                    <div class="cv-contact-box">
+                        <p class="cv-contact-box-label">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.02c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02.01 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0 0 24 12C24 5.37 18.63 0 12 0z" />
+                            </svg>
+                            Portfolio
+                        </p>
+                        <a href="https://github.com/Viktoria1910" target="_blank" rel="noopener">github.com/Viktoria1910</a>
+                    </div>
+                    <div class="cv-contact-box">
+                        <p class="cv-contact-box-label">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                            Kontakt
+                        </p>
+                        <a href="mailto:juranic.kd@gmail.com">juranic.kd@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /cv-hero-card -->
+
+        <!-- IME -->
+        <h2 class="cv-big-name">VIKTORIA JURANIĆ</h2>
+
+        <div class="cv-two-col" style="align-items: stretch;">
+
+          <!-- Lijeva kolona -->
+          <div class="cv-stack">
+
+            <div class="cv-card cv-card-indigo">
+              <span class="cv-card-title">O Meni</span>
+              <p class="cv-bio">
+                Ambiciozna i proaktivna osoba koja voli učiti kroz praksu i rad na stvarnim projektima.
+                Zanimaju me tehnologija, dizajn i stvaranje rješenja koja korisnicima olakšavaju svakodnevni život.
+                U radu sam odgovorna, organizirana i usmjerena na ciljeve.
+              </p>
+              <p class="cv-bio">
+                U slobodno vrijeme bavim se folklorom i član sam dobrovoljnog vatrogasnog društva.
+                Volim putovati, upoznavati nove kulture i ljude.
+              </p>
+            </div>
+
+            <div class="cv-card" style="flex: 2; display:flex; flex-direction:column;">
+              <span class="cv-card-title">Radno iskustvo</span>
+              <div class="cv-timeline" style="flex:1; display:flex; flex-direction:column; justify-content:flex-start; gap:2.6rem; padding-top:.8rem;">
+                <div class="cv-tl-item">
+                  <span class="cv-tl-year">2025.</span>
+                  <span class="cv-tl-name"><a href="https://jaspero.co/" target="_blank" rel="noopener">Jaspero d.o.o.</a></span>
+                  <span class="cv-tl-sub">iOS Developer</span>
+                  <span class="cv-tl-sub">Drniška ulica 9</span>
+                  <span class="cv-tl-sub">31000 Osijek</span>
+                </div>
+                <div class="cv-tl-item">
+                  <span class="cv-tl-year">2023.</span>
+                  <span class="cv-tl-name">Caffe bar &ldquo;396&rdquo;</span>
+                  <span class="cv-tl-sub">Duga ulica 60</span>
+                  <span class="cv-tl-sub">31216 Ivanovac</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cv-card cv-card-lime" style="flex: 1;">
+              <span class="cv-card-title">Vještine</span>
+              <span class="cv-group">Tehničke vještine</span>
+              <div class="cv-pills">
+                <span class="cv-pill">Razvoj iOS mobilnih aplikacija</span>
+                <span class="cv-pill">Objektno-orijentirano programiranje</span>
+                <span class="cv-pill">Razvoj korisničkih sučelja</span>
+                <span class="cv-pill">Verzioniranje i dokumentiranje koda</span>
+                <span class="cv-pill">Osnove baza podataka</span>
+              </div>
+              <span class="cv-group">Ostale vještine</span>
+              <div class="cv-pills">
+                <span class="cv-pill">Timski rad</span>
+                <span class="cv-pill">Organiziranost i točnost</span>
+              </div>
+            </div>
+
+          </div><!-- /lijeva kolona -->
+
+          <!-- Desna kolona -->
+          <div class="cv-stack">
+
+            <div class="cv-card cv-card-lime">
+              <span class="cv-card-title">Programski jezici</span>
+              <div class="cv-pills">
+                <span class="cv-pill">C</span>
+                <span class="cv-pill">Java</span>
+                <span class="cv-pill">Python</span>
+                <span class="cv-pill">Swift</span>
+                <span class="cv-pill">JavaScript</span>
+                <span class="cv-pill">SQL</span>
+              </div>
+            </div>
+
+            <div class="cv-card cv-card-olive">
+              <span class="cv-card-title">Softverski alati</span>
+              <span class="cv-group">Razvojni okviri</span>
+              <div class="cv-pills">
+                <span class="cv-pill">SwiftUI</span>
+                <span class="cv-pill">UIKit</span>
+              </div>
+              <span class="cv-group">Razvojni alati</span>
+              <div class="cv-pills">
+                <span class="cv-pill">Xcode</span>
+                <span class="cv-pill">VS Code</span>
+                <span class="cv-pill">Git</span>
+              </div>
+              <span class="cv-group">Dizajn i projektiranje</span>
+              <div class="cv-pills">
+                <span class="cv-pill">Figma</span>
+                <span class="cv-pill">Blender</span>
+              </div>
+            </div>
+
+            <div class="cv-card cv-card-dusk">
+              <span class="cv-card-title">Projekti</span>
+              <div class="cv-projects">
+                <div>
+                  <span class="cv-proj-badge">[Naziv projekta 1]</span>
+                  <a class="cv-proj-url" href="https://github.com/[username]/[repo1]" target="_blank" rel="noopener">https://github.com/[username]/[repo1]</a>
+                </div>
+                <div>
+                  <span class="cv-proj-badge">[Naziv projekta 2]</span>
+                  <a class="cv-proj-url" href="https://github.com/[username]/[repo2]" target="_blank" rel="noopener">https://github.com/[username]/[repo2]</a>
+                </div>
+                <div>
+                  <span class="cv-proj-badge">[Naziv projekta 3]</span>
+                  <a class="cv-proj-url" href="https://github.com/[username]/[repo3]" target="_blank" rel="noopener">https://github.com/[username]/[repo3]</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="cv-card cv-card-olive" style="flex: 1;">
+              <span class="cv-card-title">Jezici</span>
+              <div class="cv-langs">
+                <div class="cv-lang">
+                  <p class="cv-lang-name">Hrvatski</p>
+                  <p class="cv-lang-level">Materinski jezik</p>
+                </div>
+                <div class="cv-lang">
+                  <p class="cv-lang-name">Engleski</p>
+                  <p class="cv-lang-level">B1 razina</p>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /desna kolona -->
+
+        </div><!-- /cv-two-col -->
+
+        <div class="cv-card">
+          <span class="cv-card-title">Obrazovanje</span>
+          <div class="cv-timeline">
+
+            <div class="cv-tl-item">
+              <span class="cv-tl-name"><a href="https://www.ferit.unios.hr/" target="_blank" rel="noopener">Fakultet elektrotehnike, računarstva i informacijskih tehnologija</a></span>
+              <span class="cv-tl-name-gray">Sveučilište J. J. Strossmayera u Osijeku</span>
+              <span class="cv-tl-sub">Prijediplomski stručni studij računarstva</span>
+              <span class="cv-tl-sub">Kneza Trpimira 2B, 31000 Osijek</span>
+              <span class="cv-tl-sub">T: +385 31 224 600</span>
+              <div class="cv-tl-video">
+                <div class="video-wrapper">
+                  <iframe src="https://www.youtube.com/embed/aRh134YM5xc?si=hfvJFSzWFa-Pr-2v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="cv-tl-item">
+              <span class="cv-tl-name"><a href="https://ss-ekonomska-upravna-os.skole.hr/" target="_blank" rel="noopener">Ekonomska i upravna škola</a></span>
+              <span class="cv-tl-name-gray">Osijek</span>
+              <span class="cv-tl-sub">Trg Svetog Trojstva 4, 31000 Osijek</span>
+              <img src="img/viktoria/srednja.bmp" data-full="img/viktoria/srednja.bmp"
+                   data-group="srednja"
+                   alt="Ekonomska i upravna škola Osijek" class="gallery-img cv-tl-img" loading="lazy"
+                   style="max-height: 700px;"
+                   onerror="this.style.display='none'">
+            </div>
+
+            <div class="cv-tl-item">
+              <span class="cv-tl-name"><a href="http://www.osantunovac.hr/" target="_blank" rel="noopener">Osnovna škola Antunovac</a></span>
+              <span class="cv-tl-name-gray">Antunovac</span>
+              <span class="cv-tl-sub">Školska ulica 15, 31216 Antunovac</span>
+              <img src="img/viktoria/osnovna.webp" data-full="img/viktoria/osnovna.webp"
+                   data-group="osnovna"
+                   alt="Osnovna škola Antunovac" class="gallery-img cv-tl-img" loading="lazy"
+                   onerror="this.style.display='none'">
+            </div>
+
+          </div>
+        </div><!-- /obrazovanje -->
+
+    </div><!-- /container -->
+</div><!-- /cv-page -->
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <p class="footer-name">Viktoria Juranić &amp; Anita Ivkov</p>
+      <p class="footer-info">
+        Web stranica je izrađena za vrijeme pohađanja
+        <br><a href="https://www.ferit.unios.hr" target="_blank" rel="noopener">
+            <em>Fakulteta elektrotehnike, računarstva i informacijskih tehnologija Osijek, </em></a>
+        <br>u sklopu kolegija
+            <a href="https://www.ferit.unios.hr/upisi-i-studijski-programi/strucni-prijediplomski-studij#racunarstvo#SR6-02"
+            target="_blank" rel="noopener"><em>Multimedijska tehnika</em></a>
+      </p>
+      <p class="footer-copy">&copy; 2026 Viktoria Juranić &amp; Anita Ivkov</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
