@@ -1,0 +1,166 @@
+/* ============================================================
+   INDEX PAGE
+   ============================================================ */
+.index-hero-tile {
+    background: var(--indigo);
+    border-radius: var(--radius-lg);
+    padding: 3.5rem 2.5rem;
+    color: var(--white);
+    margin: 1.5rem 0 var(--gap);
+    display: flex; align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; gap: 1.5rem;
+}
+.index-hero-tile h1 {
+    font-size: clamp(2rem,5vw,3.2rem);
+    font-weight: 900; color: var(--white);
+    line-height: 1; margin-bottom: .5rem;
+}
+.index-hero-tile h1 span { color: var(--lime); }
+.index-hero-tile p { color: rgba(255,255,255,.65); font-size: .95rem; }
+.index-hero-tile p a { color: inherit; text-decoration: none; }
+.index-hero-tile p a:hover { text-decoration: underline; color: inherit; }
+.index-hero-badge {
+    background: var(--lime); color: var(--indigo);
+    font-size: .78rem; font-weight: 800;
+    letter-spacing: .5px; text-transform: uppercase;
+    padding: .5rem 1.25rem; border-radius: var(--radius-pill);
+    white-space: nowrap; flex-shrink: 0;
+    text-decoration: none;
+}
+.index-hero-badge:hover { text-decoration: none; color: var(--indigo); }
+
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: var(--gap); margin-bottom: var(--gap);
+}
+.student-tile {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(61,49,91,.08);
+    overflow: hidden;
+    transition: transform .25s, box-shadow .25s;
+    text-decoration: none; color: inherit;
+    display: flex; flex-direction: column;
+}
+.student-tile:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    text-decoration: none; color: inherit;
+}
+.student-tile-header {
+    background: var(--indigo);
+    padding: 1.25rem 1.5rem;
+    display: flex; align-items: center; gap: 1.25rem;
+    min-height: 0;
+}
+.student-photo-placeholder {
+    width: 160px; height: 190px;
+    border-radius: var(--radius-md);
+    background: rgba(255,255,255,.12);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 4.8rem; flex-shrink: 0;
+    border: 2px solid rgba(248,249,145,.35);
+}
+.student-tile-header-text { color: var(--white); }
+.student-tile-header-text h2 {
+    font-size: 1.3rem; font-weight: 800;
+    color: var(--white); margin-bottom: .2rem;
+}
+.student-tile-header-text .s-role {
+    font-size: .82rem; color: var(--lime); font-weight: 600;
+}
+.student-tile-header-text .s-role a {
+    color: var(--lime); text-decoration: none;
+}
+.student-tile-body {
+    padding: 1.25rem 1.5rem 1.5rem;
+    flex: 1; display: flex; flex-direction: column; gap: 1rem;
+}
+.student-tile-body p { color: var(--gray); font-size: .88rem; line-height: 1.6; }
+
+/* ── Custom Audio Player ──────────────────────────────────── */
+.cap {
+    display: flex; align-items: center; gap: .75rem;
+    background: var(--indigo);
+    border-radius: var(--radius-pill);
+    padding: .5rem .9rem .5rem .6rem;
+    user-select: none;
+    align-self: flex-start; width: fit-content; max-width: 100%;
+}
+.cap-play {
+    width: 36px; height: 36px; flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--lime); border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .15s, background .2s;
+}
+.cap-play:hover { transform: scale(1.1); background: #f0f07a; }
+.cap-play svg {
+    width: 14px; height: 14px;
+    fill: var(--indigo); display: block;
+    margin-left: 2px;
+}
+.cap-progress-wrap { flex: 1; cursor: pointer; padding: 8px 0; }
+.cap-progress-bar {
+    position: relative; height: 4px;
+    background: rgba(255,255,255,.2); border-radius: 2px;
+}
+.cap-fill {
+    height: 100%; width: 0%; background: var(--lime);
+    border-radius: 2px; transition: width .1s linear;
+}
+.cap-thumb {
+    position: absolute; top: 50%; right: auto;
+    width: 12px; height: 12px; margin-top: -6px;
+    background: var(--white); border-radius: 50%;
+    left: 0%; transform: translateX(-50%);
+    transition: left .1s linear;
+}
+.cap-time { color: rgba(255,255,255,.7); font-size: .78rem; white-space: nowrap; }
+
+.btn {
+    display: inline-flex; align-items: center; gap: .4rem;
+    background: var(--indigo); color: var(--white) !important;
+    padding: .55rem 1.3rem; border-radius: var(--radius-pill);
+    font-size: .84rem; font-weight: 700;
+    text-decoration: none !important;
+    transition: background .2s, transform .15s;
+    align-self: flex-start;
+}
+.btn:hover { background: var(--dusk); transform: translateY(-1px); }
+
+.colleagues-tile {
+    background: var(--lime);
+    border-radius: var(--radius-lg);
+    padding: 2rem 2rem;
+    margin-bottom: var(--gap);
+}
+.colleagues-tile .section-heading { color: var(--indigo); margin-bottom: .4rem; }
+.colleagues-tile > p { color: rgba(61,49,91,.7); font-size: .88rem; margin-bottom: 1.2rem; }
+.colleagues-grid { display: flex; flex-wrap: wrap; gap: .55rem; }
+.colleague-pill {
+    display: inline-flex; align-items: center;
+    background: var(--white); border: 2px solid rgba(61,49,91,.18);
+    border-radius: var(--radius-pill);
+    padding: .45rem 1.1rem;
+    font-size: .87rem; font-weight: 700; color: var(--indigo);
+    transition: all .2s;
+}
+.colleague-pill:hover {
+    background: var(--indigo); color: var(--white);
+    text-decoration: none; border-color: var(--indigo);
+}
+
+/* ============================================================
+   RESPONSIVE – index page
+   ============================================================ */
+@media (max-width: 860px) {
+    .students-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 580px) {
+    .nav-links a { padding: .35rem .6rem; font-size: .8rem; }
+    .index-hero-tile { padding: 2.5rem 1.5rem; }
+}

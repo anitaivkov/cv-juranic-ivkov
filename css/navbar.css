@@ -1,0 +1,28 @@
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.navbar {
+    position: sticky; top: 0; z-index: 200;
+    background: var(--indigo);
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.navbar .container {
+    display: flex; align-items: center;
+    justify-content: space-between; height: 56px;
+}
+.nav-brand { font-weight: 800; font-size: 1rem; color: var(--white); letter-spacing: -.3px; text-decoration: none; }
+.nav-brand span { color: var(--lime); }
+.nav-brand:hover { text-decoration: none; }
+.navbar .container { max-width: 1300px; }
+.nav-links { display: flex; gap: .15rem; }
+.nav-links a {
+    color: rgba(255,255,255,.65); padding: .38rem .9rem;
+    border-radius: var(--radius-pill);
+    font-size: .87rem; font-weight: 500; transition: all .2s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--white);
+    background: rgba(255,255,255,.13);
+    text-decoration: none;
+}
