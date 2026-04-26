@@ -103,10 +103,10 @@
     fill: var(--indigo); display: block;
     margin-left: 2px;
 }
-.cap-progress-wrap { flex: 1; cursor: pointer; padding: 8px 0; }
+.cap-progress-wrap { flex: 1; min-width: 120px; cursor: pointer; padding: 8px 0; }
 .cap-progress-bar {
     position: relative; height: 4px;
-    background: rgba(255,255,255,.2); border-radius: 2px;
+    background: rgba(255,255,255,.35); border-radius: 2px;
 }
 .cap-fill {
     height: 100%; width: 0%; background: var(--lime);
