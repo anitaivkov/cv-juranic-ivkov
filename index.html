@@ -37,7 +37,7 @@
 
     <a href="viktoria.html" class="student-tile">
       <div class="student-tile-header">
-        <div class="student-photo-placeholder">&#128105;</div>
+        <img src="img/viktoria/profilna_viki.png" alt="Viktoria Juranić" class="profile-zoomable" title="Klikni za uvećanje" style="width:160px;height:190px;border-radius:14px;object-fit:cover;object-position:top center;border:2px solid rgba(248,249,145,.35);cursor:zoom-in;">
         <div class="student-tile-header-text">
           <h2>Viktoria Juranić</h2>
           <p class="s-role">Računarstvo &ndash; FERIT Osijek</p>
@@ -45,7 +45,7 @@
       </div>
       <div class="student-tile-body">
         <p>Studentica preddiplomskog studija računarstva. Kliknite za pregled portfolia.</p>
-        <audio class="cap-audio" src="audio/viktoria_intro.mp3" preload="metadata"></audio>
+        <video class="cap-audio" src="viktoria_predstavljanje.mp4" preload="metadata" style="display:none"></video>
         <div class="cap" onclick="event.stopPropagation()">
           <button class="cap-play" aria-label="Reproduciraj"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20" /></svg></button>
           <div class="cap-progress-wrap">
@@ -59,7 +59,7 @@
 
     <a href="anita.html" class="student-tile">
       <div class="student-tile-header">
-        <img src="img/anita/profilna.png" alt="Anita Ivkov" style="width:160px;height:190px;border-radius:14px;object-fit:cover;object-position:top center;border:2px solid rgba(248,249,145,.35);">
+        <img src="img/anita/profilna.png" alt="Anita Ivkov" class="profile-zoomable" title="Klikni za uvećanje" style="width:160px;height:190px;border-radius:14px;object-fit:cover;object-position:top center;border:2px solid rgba(248,249,145,.35);cursor:zoom-in;">
         <div class="student-tile-header-text">
           <h2>Anita Ivkov</h2>
           <p class="s-role">Računarstvo &ndash; FERIT Osijek</p>
@@ -67,7 +67,7 @@
       </div>
       <div class="student-tile-body">
         <p>Studentica preddiplomskog studija računarstva. Kliknite za pregled portfolia.</p>
-        <audio class="cap-audio" src="audio/anita_intro.mp3" preload="metadata"></audio>
+        <video class="cap-audio" src="anita_predstavljanje.mp4" preload="metadata" style="display:none"></video>
         <div class="cap" onclick="event.stopPropagation()">
           <button class="cap-play" aria-label="Reproduciraj"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20" /></svg></button>
           <div class="cap-progress-wrap">
@@ -86,13 +86,17 @@
     <p class="section-heading">Kolege studenti</p>
     <p>Web stranice naših kolega iz grupe:</p>
     <div class="colleagues-grid">
-      <a href="https://ADRESA-KOLEGE-1.github.io"
+      <a href="https://astmaticar.github.io/Portfolio_Studenata/projekt/student1.html"
          target="_blank" rel="noopener" class="colleague-pill">
-        Ime Prezime (Kolega/ica 1)
+        Lana Gale
       </a>
-      <a href="https://ADRESA-KOLEGE-2.github.io"
+      <a href="https://astmaticar.github.io/Portfolio_Studenata/projekt/student2.html"
          target="_blank" rel="noopener" class="colleague-pill">
-        Ime Prezime (Kolega/ica 2)
+        Dorijan Dragić
+      </a>
+      <a href="https://predstavljanje-poslodavcu.netlify.app/petra"
+         target="_blank" rel="noopener" class="colleague-pill">
+        Petra Popović
       </a>
     </div>
   </div>
@@ -127,6 +131,24 @@ document.querySelectorAll('.cap').forEach(function(cap) {
   var pauseIcon = '<svg viewBox="0 0 24 24"><rect x="5" y="4" width="4" height="16"/><rect x="15" y="4" width="4" height="16"/></svg>';
   var playIcon  = '<svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20" /></svg>';
 
+  /* ── Blokiranje klikova na cijeli player ── */
+  cap.addEventListener('click', function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+  });
+
+  /* ── Web Audio pojačanje (GainNode) ── */
+  var audioCtx = null;
+  function initBoost() {
+    if (audioCtx) return;
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    var source = audioCtx.createMediaElementSource(audio);
+    var gain   = audioCtx.createGain();
+    gain.gain.value = 2.5;
+    source.connect(gain);
+    gain.connect(audioCtx.destination);
+  }
+
   function fmt(s) {
     var m = Math.floor(s / 60);
     return m + ':' + ('0' + Math.floor(s % 60)).slice(-2);
@@ -137,8 +159,11 @@ document.querySelectorAll('.cap').forEach(function(cap) {
     thumb.style.left = pct + '%';
     time.textContent = fmt(audio.currentTime) + (audio.duration ? ' / ' + fmt(audio.duration) : '');
   }
-  btn.addEventListener('click', function() {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    e.preventDefault();
     if (audio.paused) {
+      initBoost();
       document.querySelectorAll('.cap-audio').forEach(function(a) { a.pause(); });
       document.querySelectorAll('.cap-play').forEach(function(b) { b.innerHTML = playIcon; });
       audio.play();
@@ -151,11 +176,85 @@ document.querySelectorAll('.cap').forEach(function(cap) {
   audio.addEventListener('timeupdate', update);
   audio.addEventListener('loadedmetadata', update);
   audio.addEventListener('ended', function() { btn.innerHTML = playIcon; update(); });
-  bar.addEventListener('click', function(e) {
+
+  /* ── Seek: klik i povlačenje po traci ── */
+  var wrap     = cap.querySelector('.cap-progress-wrap');
+  var dragging = false;
+
+  function seek(e) {
+    if (!audio.duration) return;
+    var clientX = e.touches ? e.touches[0].clientX : e.clientX;
     var rect = bar.getBoundingClientRect();
-    audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
+    var pct  = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+    audio.currentTime = pct * audio.duration;
+    update();
+  }
+
+  wrap.addEventListener('click', function(e) {
+    e.stopPropagation();
+    e.preventDefault();
   });
+
+  wrap.addEventListener('mousedown', function(e) {
+    e.stopPropagation(); e.preventDefault();
+    dragging = true;
+    seek(e);
+  });
+  wrap.addEventListener('touchstart', function(e) {
+    e.stopPropagation();
+    dragging = true;
+    seek(e);
+  }, { passive: true });
+
+  document.addEventListener('mousemove', function(e) {
+    if (!dragging) return;
+    seek(e);
+  });
+  document.addEventListener('touchmove', function(e) {
+    if (!dragging) return;
+    seek(e);
+  }, { passive: true });
+
+  document.addEventListener('mouseup', function() { dragging = false; });
+  document.addEventListener('touchend', function() { dragging = false; });
 });
+</script>
+
+<!-- Profile lightbox -->
+<div id="profile-lb" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;">
+  <img id="profile-lb-img" src="" alt="" style="max-width:90vw;max-height:90vh;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,.6);">
+</div>
+
+<script>
+(function() {
+  var lb    = document.getElementById('profile-lb');
+  var lbImg = document.getElementById('profile-lb-img');
+
+  document.querySelectorAll('.profile-zoomable').forEach(function(img) {
+    img.addEventListener('click', function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lb.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  lb.addEventListener('click', function() {
+    lb.style.display = 'none';
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lb.style.display === 'flex') {
+      lb.style.display = 'none';
+      document.body.style.overflow = '';
+      lbImg.src = '';
+    }
+  });
+}());
 </script>
 
 </body>
