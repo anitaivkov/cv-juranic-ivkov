@@ -40,7 +40,10 @@
             <!-- Slika -->
             <div class="cv-hero-img-col">
                 <div class="cv-img-placeholder" aria-label="Profilna fotografija">
-                    moja<br>slika
+                    <img src="img/viktoria/profilna_viki.png" alt="Viktoria Juranić – profilna fotografija"
+                         class="gallery-img" data-full="img/viktoria/profilna_viki.png" data-group="profilna-viki"
+                         style="cursor:zoom-in;"
+                         onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','moja<br>slika')">
                 </div>
             </div>
 
@@ -106,9 +109,9 @@
               </p>
             </div>
 
-            <div class="cv-card" style="flex: 2; display:flex; flex-direction:column;">
+            <div class="cv-card">
               <span class="cv-card-title">Radno iskustvo</span>
-              <div class="cv-timeline" style="flex:1; display:flex; flex-direction:column; justify-content:flex-start; gap:2.6rem; padding-top:.8rem;">
+              <div class="cv-timeline" style="padding-top:.8rem;">
                 <div class="cv-tl-item">
                   <span class="cv-tl-year">2025.</span>
                   <span class="cv-tl-name"><a href="https://jaspero.co/" target="_blank" rel="noopener">Jaspero d.o.o.</a></span>
@@ -125,7 +128,7 @@
               </div>
             </div>
 
-            <div class="cv-card cv-card-lime" style="flex: 1;">
+            <div class="cv-card cv-card-lime">
               <span class="cv-card-title">Vještine</span>
               <span class="cv-group">Tehničke vještine</span>
               <div class="cv-pills">
@@ -139,6 +142,20 @@
               <div class="cv-pills">
                 <span class="cv-pill">Timski rad</span>
                 <span class="cv-pill">Organiziranost i točnost</span>
+              </div>
+            </div>
+
+            <div class="cv-card cv-card-olive" style="flex:1;">
+              <span class="cv-card-title">Jezici</span>
+              <div class="cv-langs">
+                <div class="cv-lang">
+                  <p class="cv-lang-name">Hrvatski</p>
+                  <p class="cv-lang-level">Materinski jezik</p>
+                </div>
+                <div class="cv-lang">
+                  <p class="cv-lang-name">Engleski</p>
+                  <p class="cv-lang-level">B1 razina</p>
+                </div>
               </div>
             </div>
 
@@ -179,34 +196,52 @@
               </div>
             </div>
 
-            <div class="cv-card cv-card-dusk">
+            <div class="cv-card cv-card-dusk" style="flex:1; display:flex; flex-direction:column;">
               <span class="cv-card-title">Projekti</span>
-              <div class="cv-projects">
+              <div class="cv-projects" style="flex:1; justify-content:space-between;">
                 <div>
-                  <span class="cv-proj-badge">[Naziv projekta 1]</span>
-                  <a class="cv-proj-url" href="https://github.com/[username]/[repo1]" target="_blank" rel="noopener">https://github.com/[username]/[repo1]</a>
-                </div>
-                <div>
-                  <span class="cv-proj-badge">[Naziv projekta 2]</span>
-                  <a class="cv-proj-url" href="https://github.com/[username]/[repo2]" target="_blank" rel="noopener">https://github.com/[username]/[repo2]</a>
+                  <span class="cv-proj-badge">WebShop</span>
+                  <a class="cv-proj-url" href="https://github.com/Viktoria1910/WebShop" target="_blank" rel="noopener">https://github.com/Viktoria1910/WebShop</a>
                 </div>
                 <div>
-                  <span class="cv-proj-badge">[Naziv projekta 3]</span>
-                  <a class="cv-proj-url" href="https://github.com/[username]/[repo3]" target="_blank" rel="noopener">https://github.com/[username]/[repo3]</a>
+                  <span class="cv-proj-badge">Evidencija članova udruge</span>
+                  <a class="cv-proj-url" href="https://github.com/Viktoria1910/prog2" target="_blank" rel="noopener">https://github.com/Viktoria1910/prog2</a>
                 </div>
-              </div>
-            </div>
-
-            <div class="cv-card cv-card-olive" style="flex: 1;">
-              <span class="cv-card-title">Jezici</span>
-              <div class="cv-langs">
-                <div class="cv-lang">
-                  <p class="cv-lang-name">Hrvatski</p>
-                  <p class="cv-lang-level">Materinski jezik</p>
+                <div>
+                  <span class="cv-proj-badge">Detektor namirnica</span>
+                  <a class="cv-proj-url" href="https://github.com/anitaivkov/Detektor-namirnica" target="_blank" rel="noopener">https://github.com/anitaivkov/Detektor-namirnica</a>
+                  <div class="cv-proj-imgs">
+                    <img src="img/anita/proj_detektor1.png" data-full="img/anita/proj_detektor1.png"
+                         data-group="viki-detektor"
+                         alt="Detektor namirnica – screenshot 1" class="gallery-img cv-proj-img" loading="lazy"
+                         onerror="this.style.display='none'">
+                    <img src="img/anita/proj_detektor2.png" data-full="img/anita/proj_detektor2.png"
+                         data-group="viki-detektor"
+                         alt="Detektor namirnica – screenshot 2" class="gallery-img cv-proj-img" loading="lazy"
+                         onerror="this.style.display='none'">
+                    <img src="img/anita/proj_detektor3.png" data-full="img/anita/proj_detektor3.png"
+                         data-group="viki-detektor"
+                         alt="Detektor namirnica – screenshot 3" class="gallery-img cv-proj-img" loading="lazy"
+                         onerror="this.style.display='none'">
+                  </div>
                 </div>
-                <div class="cv-lang">
-                  <p class="cv-lang-name">Engleski</p>
-                  <p class="cv-lang-level">B1 razina</p>
+                <div>
+                  <span class="cv-proj-badge">Platforma za freelance poslove</span>
+                  <a class="cv-proj-url" href="https://github.com/anitaivkov/jobo-platform" target="_blank" rel="noopener">https://github.com/anitaivkov/jobo-platform</a>
+                  <div class="cv-proj-imgs">
+                    <img src="img/anita/proj_jobo1.webp" data-full="img/anita/proj_jobo1.webp"
+                         data-group="viki-jobo"
+                         alt="Jobo – screenshot 1" class="gallery-img cv-proj-img" loading="lazy"
+                         onerror="this.style.display='none'">
+                    <img src="img/anita/proj_jobo2.webp" data-full="img/anita/proj_jobo2.webp"
+                         data-group="viki-jobo"
+                         alt="Jobo – screenshot 2" class="gallery-img cv-proj-img" loading="lazy"
+                         onerror="this.style.display='none'">
+                    <img src="img/anita/proj_jobo3.webp" data-full="img/anita/proj_jobo3.webp"
+                         data-group="viki-jobo"
+                         alt="Jobo – screenshot 3" class="gallery-img cv-proj-img" loading="lazy"
+                         onerror="this.style.display='none'">
+                  </div>
                 </div>
               </div>
             </div>
@@ -247,7 +282,7 @@
               <span class="cv-tl-name"><a href="http://www.osantunovac.hr/" target="_blank" rel="noopener">Osnovna škola Antunovac</a></span>
               <span class="cv-tl-name-gray">Antunovac</span>
               <span class="cv-tl-sub">Školska ulica 15, 31216 Antunovac</span>
-              <img src="img/viktoria/osnovna.webp" data-full="img/viktoria/osnovna.webp"
+              <img src="img/viktoria/osnovna.jpg" data-full="img/viktoria/osnovna.jpg"
                    data-group="osnovna"
                    alt="Osnovna škola Antunovac" class="gallery-img cv-tl-img" loading="lazy"
                    onerror="this.style.display='none'">
