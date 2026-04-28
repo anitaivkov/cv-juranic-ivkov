@@ -62,12 +62,12 @@
 /* ── Multi-image project strip ─────────────────────────────── */
 .cv-proj-imgs {
     display: flex; gap: .5rem; margin-top: .65rem;
-    padding: 0 0 .25rem;
+    padding: 0 0 .25rem; overflow: hidden;
 }
-.cv-proj-imgs .cv-proj-img {
-    flex: 1 1 0; min-width: 0; height: 130px; margin-top: 0;
+.cv-proj-imgs .cv-proj-img,
+.cv-proj-imgs .cv-tl-img {
+    flex: 1 1 0; min-width: 0; width: 0; height: 130px; margin-top: 0;
 }
-
 /* ============================================================
    FOOTER
    ============================================================ */
